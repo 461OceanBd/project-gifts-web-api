@@ -239,7 +239,8 @@ m1=1..1</panel_attributes>
     <panel_attributes>&lt;&lt;Opportunity&gt;&gt;
 --
 _-id (PK)_
-type</panel_attributes>
+type
+isPublic</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -491,16 +492,16 @@ m1=0..1</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>945</x>
-      <y>637</y>
-      <w>133</w>
+      <x>938</x>
+      <y>651</y>
+      <w>140</w>
       <h>112</h>
     </coordinates>
     <panel_attributes>Anniversaire, noël,
 pour le plaisir...
 (Certaines fournies par
-le système, ajoutées par
-utilisateur)
+le système (isPublic) 
+ou ajoutées par utilisateur)
 bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
