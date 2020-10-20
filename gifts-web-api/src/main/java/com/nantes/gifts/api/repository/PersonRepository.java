@@ -8,5 +8,4 @@ import com.nantes.gifts.api.bean.Person;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
 	
-
 }
