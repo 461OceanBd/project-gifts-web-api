@@ -50,14 +50,14 @@ public class PersonController {
 	}
 	
 	
-	// save school class
+	// save person
 	@PostMapping("person")
 	public Person createPerson(@RequestBody Person person) {
 		return this.personRepository.save(person);
 	}
 	
 	
-	//update class
+	//update person
 	@PutMapping("person/{id}")
 	public ResponseEntity<Person> updatePerson(@PathVariable(value = "id") Long personId,
 			@Validated @RequestBody Person personDetails) throws RessourceNotFoundException {
