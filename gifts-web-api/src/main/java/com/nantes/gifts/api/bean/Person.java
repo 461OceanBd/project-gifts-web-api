@@ -2,10 +2,12 @@ package com.nantes.gifts.api.bean;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -19,6 +21,9 @@ public class Person {
 	private Date birthDate;
 	private boolean isActive;
 	private String picture;
+	
+	@OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+	private AlertBirthday alertBirthday;
 	
 	
 	
