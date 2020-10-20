@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Person {
 	
@@ -20,6 +21,7 @@ public class Person {
 	private String picture;
 	
 	
+	
 	public Person(long id, String completeName, String nickName, Date birthDate, boolean isActive, String picture) {
 		super();
 		this.id = id;
@@ -28,10 +30,12 @@ public class Person {
 		this.birthDate = birthDate;
 		this.isActive = isActive;
 		this.picture = picture;
+		
 	}
 
 	public Person() {
 		super();
+		
 	}
 	
 	

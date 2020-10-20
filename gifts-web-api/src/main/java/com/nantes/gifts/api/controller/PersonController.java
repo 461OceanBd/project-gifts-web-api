@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nantes.gifts.api.bean.AlertBirthday;
 import com.nantes.gifts.api.bean.Person;
 import com.nantes.gifts.api.exception.RessourceNotFoundException;
+import com.nantes.gifts.api.repository.AlertBirthdayRepository;
 import com.nantes.gifts.api.repository.PersonRepository;
 
 @RestController
@@ -27,6 +29,9 @@ public class PersonController {
 	
 	@Autowired
 	PersonRepository personRepository;
+	
+	@Autowired
+	AlertBirthdayRepository alertBirthdayRepository;
 	
 	
 	//Get all persons
@@ -50,9 +55,14 @@ public class PersonController {
 	}
 	
 	
-	// save person
+	// save person and his associate alertBirthday
 	@PostMapping("person")
 	public Person createPerson(@RequestBody Person person) {
+		
+		AlertBirthday alertBirthday = new AlertBirthday(person);
+		
+		this.alertBirthdayRepository.save(alertBirthday);
+		
 		return this.personRepository.save(person);
 	}
 	
