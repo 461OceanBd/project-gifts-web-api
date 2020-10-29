@@ -22,8 +22,13 @@ import com.nantes.gifts.api.repository.AlertBirthdayRepository;
 public class AlertBirthdayController {
 	
 	
+	
+	private final AlertBirthdayRepository alertBirthdayRepository;
+	
 	@Autowired
-	AlertBirthdayRepository alertBirthdayRepository;
+	public AlertBirthdayController(AlertBirthdayRepository alertBirthdayRepository) {
+		this.alertBirthdayRepository = alertBirthdayRepository;
+	}
 	
 	
 	//Get all alertBirthday

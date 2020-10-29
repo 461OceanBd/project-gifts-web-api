@@ -27,11 +27,15 @@ import com.nantes.gifts.api.repository.PersonRepository;
 @RequestMapping("/api/")
 public class PersonController {
 	
-	@Autowired
-	PersonRepository personRepository;
+	
+	private final PersonRepository personRepository;
+	private final AlertBirthdayRepository alertBirthdayRepository;
 	
 	@Autowired
-	AlertBirthdayRepository alertBirthdayRepository;
+	public PersonController(PersonRepository personRepository, AlertBirthdayRepository alertBirthdayRepository) {
+		this.personRepository = personRepository;
+		this.alertBirthdayRepository = alertBirthdayRepository;
+	}
 	
 	
 	//Get all persons
