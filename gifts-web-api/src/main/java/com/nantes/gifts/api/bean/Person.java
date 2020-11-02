@@ -7,10 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name = "persons")
 public class Person {
 	
 	@Id
@@ -24,6 +27,9 @@ public class Person {
 	
 	@OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
 	private AlertBirthday alertBirthday;
+	
+	@ManyToOne
+	private User user;
 	
 	
 	
@@ -92,19 +98,6 @@ public class Person {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 
